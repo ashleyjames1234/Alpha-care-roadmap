@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Care Group - Development Roadmap</title>
+    <meta name="description" content="Children's Care Home Development Roadmap - Alpha Care Group">
+    <meta name="theme-color" content="#E85A6B">
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkFscGhhIENhcmUgR3JvdXAgLSBEZXZlbG9wbWVudCBSb2FkbWFwIiwKICAic2hvcnRfbmFtZSI6ICJBbHBoYSBDYXJlIFJvYWRtYXAiLAogICJkZXNjcmlwdGlvbiI6ICJDaGlsZHJlbidzIENhcmUgSG9tZSBEZXZlbG9wbWVudCBSb2FkbWFwIiwKICAic3RhcnRfdXJsIjogIi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNmNWY3ZmEiLAogICJ0aGVtZV9jb2xvciI6ICIjRTg1QTZCIiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCMmFXVjNRbTk0UFNJd0lEQWdNakF3SURJd01DSWdlRzFzYm5NOUltaDBkSEE2THk5M2QzY3Vkek11YjNKbkx6SXdNREF2YzNabklpQStQR0JsWm1rek1UUTJOelEyTmlJZ2MzUnliMnRsUFNJall6QXdNREF3SUNJZ1ptbHNiRDBpYm05dVpTSStQSEJoZEdnZ1pEMGlUVEV3TUNBME9EQWdUREEyTUNBME5qVWdUREEyTUNBME1EWWdUREUyTUNBME1EWWdUREUyTUNBek16VWdUREUwTUNBek16VWdTREUyTUNBek5UVWdTREUyTUNBek5UVWdTREUyTUNBek5UVWdURVE9IiwKICAgICAgInNpemVzIjogIjE5MngxOTIiLAogICAgICAidHlwZSI6ICJpbWFnZS9zdmcreG1sIgogICAgfQogIF0sCiAgImNhdGVnb3JpZXMiOiBbImJ1c2luZXNzIiwgInByb2R1Y3Rpdml0eSJdCn0=">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAwIDIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz4yMTQ2NzQ2NiIgc3Ryb2tlPSIjYzAwMDAwIiBmaWxsPSJub25lIj48cGF0aCBkPSJNMTAwIDQ4MCBMRA2MCQ2NSBMRDYwIDQwNiBMRTYwIDQwNiBMRTYwIDMzNSBMRTQwIDMzNSBIRTYwIDM1NSBIRTYwIDM1NSBIRTYwIDM1NSBMRDEgMCQ2NSBMRUEgMDA2NSBMRDEgMDE1IDg5UCQ2NSBMRDEgMCQ2NSBMRUQsIQogICAgQ0E9Ig==">
+    
+    <!-- iOS PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Alpha Care Roadmap">
+    
+    <!-- Android PWA -->
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: #E85A6B;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(232, 90, 107, 0.2);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo svg {
+            width: 80px;
+            height: 80px;
+            stroke: #000;
+            fill: none;
+            stroke-width: 6;
+        }
+        
+        .header h1 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            font-size: 2.5rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        .header .subtitle {
+            color: white;
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .header p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .phase {
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        
+        .phase:hover {
+            transform: translateY(-2px);
+        }
+        
+        .phase-header {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s ease;
+        }
+        
+        .phase-header:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .phase-1 .phase-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .phase-2 .phase-header { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; }
+        .phase-3 .phase-header { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; }
+        .phase-4 .phase-header { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; }
+        .phase-5 .phase-header { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; }
+        
+        .phase-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .phase-duration {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .phase-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .phase.expanded .phase-content {
+            max-height: 2000px;
+            padding: 2rem;
+        }
+        
+        .workstreams {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .workstream {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border-left: 4px solid #2c5aa0;
+        }
+        
+        .workstream h4 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .task {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .task:hover {
+            background-color: #e9ecef;
+        }
+        
+        .task-checkbox {
+            margin-right: 0.75rem;
+            margin-top: 0.25rem;
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            accent-color: #E85A6B;
+        }
+        
+        .task-checkbox {
+            margin-right: 0.75rem;
+            margin-top: 0.25rem;
+            cursor: pointer;
+        }
+        
+        .task-text {
+            flex: 1;
+            font-size: 0.95rem;
+        }
+        
+        .task.completed {
+            opacity: 0.7;
+        }
+        
+        .task.completed .task-text {
+            text-decoration: line-through;
+        }
+        
+        .critical-milestone {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .critical-milestone h5 {
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+        
+        .expand-all {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .expand-all button {
+            background: #2c5aa0;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.2s ease;
+        }
+        
+        .expand-all button:hover {
+            background: #1e3a8a;
+        }
+        
+        .progress-overview {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .progress-bar {
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 20px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100%;
+            width: 15%;
+            transition: width 0.3s ease;
+        }
+        
+        .install-prompt {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #E85A6B 0%, #d14361 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(232, 90, 107, 0.3);
+            display: none;
+            z-index: 1000;
+            animation: slideUp 0.3s ease;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .install-prompt h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .install-prompt p {
+            margin: 0 0 1rem 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .install-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .install-btn, .dismiss-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        
+        .install-btn {
+            background: white;
+            color: #E85A6B;
+            font-weight: 600;
+        }
+        
+        .install-btn:hover {
+            background: #f8f9fa;
+            transform: translateY(-1px);
+        }
+        
+        .dismiss-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+        
+        .dismiss-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .offline-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #dc3545;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: none;
+            z-index: 1000;
+        }
+        
+        .offline-indicator.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .header {
+                padding: 2rem 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .workstreams {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 0.5rem;
+            }
+            
+            .install-prompt {
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="logo">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Heart shape -->
+                    <path d="M100 170 
+                             C 60 130, 20 90, 20 60 
+                             C 20 30, 50 20, 80 40
+                             C 90 35, 110 35, 120 40
+                             C 150 20, 180 30, 180 60 
+                             C 180 90, 140 130, 100 170 Z" 
+                          stroke="currentColor" stroke-width="4" fill="none"/>
+                    
+                    <!-- House shape inside heart -->
+                    <path d="M100 100 L70 120 L70 150 L130 150 L130 120 Z" 
+                          stroke="currentColor" stroke-width="3" fill="none"/>
+                    <path d="M70 120 L100 100 L130 120" 
+                          stroke="currentColor" stroke-width="3" fill="none"/>
+                    
+                    <!-- Windows -->
+                    <rect x="80" y="130" width="8" height="8" fill="currentColor"/>
+                    <rect x="112" y="130" width="8" height="8" fill="currentColor"/>
+                    <rect x="80" y="140" width="8" height="8" fill="currentColor"/>
+                    <rect x="112" y="140" width="8" height="8" fill="currentColor"/>
+                </svg>
+                <div class="offline-indicator" id="offlineIndicator">
+            📴 You're offline - changes will sync when reconnected
+        </div>
+        
+        <div class="install-prompt" id="installPrompt">
+            <h4>📱 Install Alpha Care Roadmap</h4>
+            <p>Add this app to your home screen for easy access and offline use!</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Install App</button>
+                <button class="dismiss-btn" onclick="dismissInstall()">Not Now</button>
+            </div>
+        </div>
+            <div class="subtitle">Alpha Care Group Ltd.</div>
+            <h1>Development Roadmap</h1>
+            <p>Children's Care Home • From Planning to Operational Delivery</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="progress-overview">
+            <h3>Overall Progress</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" id="overallProgress"></div>
+            </div>
+            <p id="progressText">Planning Phase: 4/28 tasks completed (15%)</p>
+        </div>
+        
+        <div class="expand-all">
+            <button onclick="toggleAll()">Expand All Phases</button>
+        </div>
+        
+        <!-- Phase 1: Planning & Approvals -->
+        <div class="phase phase-1" id="phase1">
+            <div class="phase-header" onclick="togglePhase('phase1')">
+                <div>
+                    <div class="phase-title">Phase 1: Planning & Regulatory Approvals</div>
+                    <div class="phase-duration">Current Phase • Est. 3-6 months</div>
+                </div>
+                <div class="chevron">▼</div>
+            </div>
+            <div class="phase-content">
+                <div class="critical-milestone">
+                    <h5>🎯 Critical Milestone</h5>
+                    <p>Planning permission granted & all regulatory pre-approvals secured</p>
+                </div>
+                
+                <div class="workstreams">
+                    <div class="workstream">
+                        <h4>Planning Application</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox" checked>
+                            <div class="task-text">Submit planning application</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Address objection 1 with detailed response</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Address objection 2 with detailed response</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Address objection 3 with detailed response</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Address objection 4 with detailed response</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Attend planning committee meeting</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Receive planning decision</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workstream">
+                        <h4>Ofsted Pre-Registration</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Contact Ofsted regional office</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Attend pre-registration meeting</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Review residential care requirements</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Understand inspection framework</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workstream">
+                        <h4>Local Authority Engagement</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox" checked>
+                            <div class="task-text">Identify commissioning authorities</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Meet with children's services directors</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Understand placement needs & rates</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Establish referral pathways</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workstream">
+                        <h4>Financial & Legal Setup</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox" checked>
+                            <div class="task-text">Secure lease agreement</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Arrange development funding</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox" checked>
+                            <div class="task-text">Incorporate company structure</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Arrange comprehensive insurance</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Set up accounting systems</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Phase 2: Design & Property Preparation -->
+        <div class="phase phase-2" id="phase2">
+            <div class="phase-header" onclick="togglePhase('phase2')">
+                <div>
+                    <div class="phase-title">Phase 2: Design & Property Preparation</div>
+                    <div class="phase-duration">Month 4-8 • Property fit-out & design</div>
+                </div>
+                <div class="chevron">▼</div>
+            </div>
+            <div class="phase-content">
+                <div class="critical-milestone">
+                    <h5>🎯 Critical Milestone</h5>
+                    <p>Property fully compliant with residential care regulations & ready for occupation</p>
+                </div>
+                
+                <div class="workstreams">
+                    <div class="workstream">
+                        <h4>Architectural Design</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Engage architect experienced in care homes</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Design layouts meeting Ofsted requirements</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Ensure DBS-compliant sight lines</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Plan therapeutic/quiet spaces</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Obtain building regulations approval</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workstream">
+                        <h4>Specialist Contractors</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Select main contractor</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Install fire safety systems</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">CCTV system installation</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Secure door/window systems</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Kitchen fit-out for commercial use</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workstream">
+                        <h4>Health & Safety</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Gas safety certificates</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Electrical safety inspection</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Legionella risk assessment</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Asbestos survey (if pre-2000 building)</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Fire risk assessment</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workstream">
+                        <h4>Furniture & Equipment</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Source child-safe furniture</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Install office systems & IT</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">First aid & medical equipment</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Recreational equipment</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Phase 3: Policy Development & Systems -->
+        <div class="phase phase-3" id="phase3">
+            <div class="phase-header" onclick="togglePhase('phase3')">
+                <div>
+                    <div class="phase-title">Phase 3: Policy Development & Systems</div>
+                    <div class="phase-duration">Month 6-10 • Parallel with Phase 2</div>
+                </div>
+                <div class="chevron">▼</div>
+            </div>
+            <div class="phase-content">
+                <div class="critical-milestone">
+                    <h5>🎯 Critical Milestone</h5>
+                    <p>All policies, procedures & systems ready for Ofsted registration</p>
+                </div>
+                
+                <div class="workstreams">
+                    <div class="workstream">
+                        <h4>Safeguarding Framework</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Child protection policy</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Behaviour management policy</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Physical intervention policy</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Missing child procedures</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Complaints procedure</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workstream">
+                        <h4>Care Planning Systems</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Care planning policy</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Key worker system</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Education support framework</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Health care procedures</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Contact with families policy</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workstream">
+                        <h4>Record Keeping & IT</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Select care management software</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Set up secure record systems</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Data protection procedures</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Daily logging systems</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Financial management systems</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workstream">
+                        <h4>Quality Assurance</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Quality assurance framework</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Internal monitoring systems</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Staff supervision framework</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Independent visitor arrangements</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Phase 4: Staffing & Training -->
+        <div class="phase phase-4" id="phase4">
+            <div class="phase-header" onclick="togglePhase('phase4')">
+                <div>
+                    <div class="phase-title">Phase 4: Staffing & Training</div>
+                    <div class="phase-duration">Month 8-12 • Critical for registration</div>
+                </div>
+                <div class="chevron">▼</div>
+            </div>
+            <div class="phase-content">
+                <div class="critical-milestone">
+                    <h5>🎯 Critical Milestone</h5>
+                    <p>Full staff team recruited, DBS checked & trained ready for opening</p>
+                </div>
+                
+                <div class="workstreams">
+                    <div class="workstream">
+                        <h4>Senior Staff Recruitment</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Recruit Registered Manager</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Recruit Deputy Manager</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Recruit Senior Care Workers</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Complete enhanced DBS checks</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workstream">
+                        <h4>Care Staff Team</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Recruit residential care workers</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Recruit waking night staff</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Create shift patterns & rotas</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Complete all employment checks</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workstream">
+                        <h4>Specialist Staff</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Education coordinator</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Therapeutic support worker</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Administrative support</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Maintenance/domestic staff</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workstream">
+                        <h4>Training Programme</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Safeguarding training</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Behaviour management training</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">First aid & medication training</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Fire safety training</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">System & policy training</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Phase 5: Registration & Launch -->
+        <div class="phase phase-5" id="phase5">
+            <div class="phase-header" onclick="togglePhase('phase5')">
+                <div>
+                    <div class="phase-title">Phase 5: Registration & Operational Launch</div>
+                    <div class="phase-duration">Month 12-15 • Go live phase</div>
+                </div>
+                <div class="chevron">▼</div>
+            </div>
+            <div class="phase-content">
+                <div class="critical-milestone">
+                    <h5>🎯 Critical Milestone</h5>
+                    <p>Ofsted registration granted & first placements secured</p>
+                </div>
+                
+                <div class="workstreams">
+                    <div class="workstream">
+                        <h4>Ofsted Registration</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Submit full registration application</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Prepare for inspection visit</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Attend Ofsted inspection</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Address any conditions</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Receive registration certificate</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workstream">
+                        <h4>Operational Readiness</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Final staff training & team building</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Test all systems & procedures</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Emergency procedure drills</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Soft opening with staff</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workstream">
+                        <h4>First Placements</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Confirm placement agreements</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Prepare admission packs</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Conduct transition planning</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Welcome first residents</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workstream">
+                        <h4>Quality Monitoring</h4>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Implement daily monitoring</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Weekly management reviews</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Monthly quality reports</div>
+                        </div>
+                        <div class="task" onclick="toggleTask(this)">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-text">Prepare for 6-month inspection</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allExpanded = false;
+        let deferredPrompt;
+        
+        // PWA Installation
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallPrompt();
+        });
+        
+        function showInstallPrompt() {
+            const installPrompt = document.getElementById('installPrompt');
+            // Show prompt after a delay, unless user has already dismissed it
+            if (!localStorage.getItem('installPromptDismissed')) {
+                setTimeout(() => {
+                    installPrompt.style.display = 'block';
+                }, 3000);
+            }
+        }
+        
+        function installApp() {
+            const installPrompt = document.getElementById('installPrompt');
+            installPrompt.style.display = 'none';
+            
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    }
+                    deferredPrompt = null;
+                });
+            }
+        }
+        
+        function dismissInstall() {
+            document.getElementById('installPrompt').style.display = 'none';
+            localStorage.setItem('installPromptDismissed', 'true');
+        }
+        
+        // Offline detection
+        window.addEventListener('online', () => {
+            document.getElementById('offlineIndicator').classList.remove('show');
+        });
+        
+        window.addEventListener('offline', () => {
+            document.getElementById('offlineIndicator').classList.add('show');
+        });
+        
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                const swCode = `
+                    const CACHE_NAME = 'alpha-care-roadmap-v1';
+                    const urlsToCache = ['/'];
+                    
+                    self.addEventListener('install', (event) => {
+                        event.waitUntil(
+                            caches.open(CACHE_NAME)
+                                .then((cache) => cache.addAll(urlsToCache))
+                        );
+                    });
+                    
+                    self.addEventListener('fetch', (event) => {
+                        event.respondWith(
+                            caches.match(event.request)
+                                .then((response) => response || fetch(event.request))
+                        );
+                    });
+                `;
+                
+                const blob = new Blob([swCode], { type: 'application/javascript' });
+                const swUrl = URL.createObjectURL(blob);
+                
+                navigator.serviceWorker.register(swUrl)
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+        
+        // Data Persistence Functions
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.task-checkbox');
+            const progressData = {};
+            
+            checkboxes.forEach((checkbox, index) => {
+                progressData[index] = checkbox.checked;
+            });
+            
+            const phaseStates = {};
+            document.querySelectorAll('.phase').forEach((phase, index) => {
+                phaseStates[index] = phase.classList.contains('expanded');
+            });
+            
+            try {
+                localStorage.setItem('alphacare_progress', JSON.stringify(progressData));
+                localStorage.setItem('alphacare_phases', JSON.stringify(phaseStates));
+                console.log('Progress saved successfully');
+            } catch (e) {
+                console.error('Failed to save progress:', e);
+            }
+        }
+        
+        function loadProgress() {
+            try {
+                const savedProgress = localStorage.getItem('alphacare_progress');
+                const savedPhases = localStorage.getItem('alphacare_phases');
+                
+                if (savedProgress) {
+                    const progressData = JSON.parse(savedProgress);
+                    const checkboxes = document.querySelectorAll('.task-checkbox');
+                    
+                    checkboxes.forEach((checkbox, index) => {
+                        if (progressData[index]) {
+                            checkbox.checked = true;
+                            checkbox.closest('.task').classList.add('completed');
+                        }
+                    });
+                }
+                
+                if (savedPhases) {
+                    const phaseStates = JSON.parse(savedPhases);
+                    document.querySelectorAll('.phase').forEach((phase, index) => {
+                        if (phaseStates[index]) {
+                            phase.classList.add('expanded');
+                        }
+                    });
+                } else {
+                    // Default: expand first phase
+                    document.getElementById('phase1').classList.add('expanded');
+                }
+                
+                updateProgress();
+            } catch (e) {
+                console.error('Failed to load progress:', e);
+                // Default: expand first phase if loading fails
+                document.getElementById('phase1').classList.add('expanded');
+                updateProgress();
+            }
+        }
+        
+        function togglePhase(phaseId) {
+            const phase = document.getElementById(phaseId);
+            phase.classList.toggle('expanded');
+            updateProgress();
+            saveProgress();
+        }
+        
+        function toggleAll() {
+            const phases = document.querySelectorAll('.phase');
+            const button = document.querySelector('.expand-all button');
+            
+            allExpanded = !allExpanded;
+            
+            phases.forEach(phase => {
+                if (allExpanded) {
+                    phase.classList.add('expanded');
+                } else {
+                    phase.classList.remove('expanded');
+                }
+            });
+            
+            button.textContent = allExpanded ? 'Collapse All Phases' : 'Expand All Phases';
+            saveProgress();
+        }
+        
+        function toggleTask(taskElement) {
+            const checkbox = taskElement.querySelector('.task-checkbox');
+            
+            // Toggle the checkbox
+            checkbox.checked = !checkbox.checked;
+            
+            // Update visual state
+            if (checkbox.checked) {
+                taskElement.classList.add('completed');
+            } else {
+                taskElement.classList.remove('completed');
+            }
+            
+            // Update progress and save
+            updateProgress();
+            saveProgress();
+        }
+        
+        function updateProgress() {
+            const allTasks = document.querySelectorAll('.task-checkbox');
+            const completedTasks = document.querySelectorAll('.task-checkbox:checked');
+            
+            const totalTasks = allTasks.length;
+            const completed = completedTasks.length;
+            const percentage = Math.round((completed / totalTasks) * 100);
+            
+            document.getElementById('overallProgress').style.width = percentage + '%';
+            document.getElementById('progressText').textContent = 
+                `Overall Progress: ${completed}/${totalTasks} tasks completed (${percentage}%)`;
+            
+            // Update phase-specific progress
+            updatePhaseProgress();
+        }
+        
+        function updatePhaseProgress() {
+            const phases = ['phase1', 'phase2', 'phase3', 'phase4', 'phase5'];
+            const phaseNames = ['Planning', 'Property Prep', 'Policy Development', 'Staffing', 'Launch'];
+            
+            phases.forEach((phaseId, index) => {
+                const phase = document.getElementById(phaseId);
+                const phaseTasks = phase.querySelectorAll('.task-checkbox');
+                const phaseCompleted = phase.querySelectorAll('.task-checkbox:checked');
+                
+                const phasePercentage = phaseTasks.length > 0 ? 
+                    Math.round((phaseCompleted.length / phaseTasks.length) * 100) : 0;
+                
+                // You could add phase-specific progress indicators here
+            });
+        }
+        
+        // Initialize with saved progress
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            
+            // Check if app is running as PWA
+            if (window.matchMedia('(display-mode: standalone)').matches) {
+                console.log('Running as PWA');
+                // Hide install prompt if already installed
+                document.getElementById('installPrompt').style.display = 'none';
+            }
+        });
+        
+        // Auto-save progress periodically
+        setInterval(saveProgress, 30000); // Save every 30 seconds
+        
+        // Save before page unload
+        window.addEventListener('beforeunload', saveProgress);
+    </script>
+</body>
+</html>
